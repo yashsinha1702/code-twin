@@ -1,4 +1,3 @@
-import os
 from src.agents.qa_agent import generate_test_suite
 from src.agents.dev_agent import generate_solution
 from src.utils.executor import run_tests
@@ -32,10 +31,6 @@ def main():
             print("-" * 40)
             print("FINAL CODE:\n")
             print(solution_code)
-            
-            # Clean up
-            if os.path.exists("main.py"): os.remove("main.py")
-            if os.path.exists("test_generated.py"): os.remove("test_generated.py")
             break
         else:
             print(f"❌ Failed. Error snippet:\n{result['output'][:300]}...")

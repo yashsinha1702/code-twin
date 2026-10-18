@@ -40,8 +40,10 @@ def run_tests(test_code: str, solution_code: str) -> dict:
         
         try:
             # 3. Copy files into the container
+            # The QA agent's tests import the code under test from `main`,
+            # so the candidate solution must be saved as main.py.
             files = {
-                "solution.py": solution_code,
+                "main.py": solution_code,
                 "test_generated.py": test_code
             }
             tar_stream = create_tar_archive(files)
