@@ -1,0 +1,10 @@
+# The Dockerfile only builds the pytest sandbox image; keep the build context small
+# and never send local secrets or virtualenvs to the Docker daemon.
+.git
+.env
+.env.*
+.venv
+venv
+env
+**/__pycache__
+**/*.pyc
